@@ -1,0 +1,81 @@
+Groundhog Lite
+------------------
+
+Goal of the device is:
+- collect light data in the backyard
+- Upload collected light data to a personal computer
+- Last on battery power for at least ~1 day
+
+===============
+= Behavior    =
+===============
+- place coin cell battery in device
+- switch device to battery power source (as opposed to usb power source)
+  - usb power source is off switch as long as there is no USB attached
+- Place the device outdoors
+  - status light should be blinking to say "everything is good" or "recording" or "active"
+- Wait...
+- Pick up the device, turn it off by moving switch over to USB power source
+- Plug it into the computer via USB
+- using an application, download the data to the computer
+- when the device dies, you will not see a light flashing when its on
+
+===============
+= DEVICE TREE =
+===============
+* - Device
+  - Description
+  - Voltage Requirements
+  - Current Consumption
+  - Interfaces
+  - Notes
+
+* - STM32L431RCT6
+  - Low power 32-bit ARM CPU. Used to collect and store sensor information.
+  - 1.8V - 3.3V Range 
+  - TODO
+  - I2C, USB, DAC, SWD
+  - Need to confirm if this is the correct CPU to use. Confirm how many inputs can go into DAC.
+
+* - Photoresistor (e.g. SEN-09088)
+  - Resistor that is sensitive to light. Use for sensor information.
+  - N/A, its a resistor
+  - N/A, its a resistor
+  - Analog 
+  - Potentially use voltage divider to measure sensor data. Use multiple photoresistors to get directional light data. Depends on how many inputs can go into DAC.
+
+* - Status LED
+  - Used to communicate device state 
+  - N/A passive device
+  - N/A passive device
+  - Analog
+  - Communicates error & state
+
+* - Power LED
+  - Used to communicate power supply is on & working
+  - N/A passive device
+  - N/A passive device
+  - Analog
+  - Communicates regulator
+
+* - FRAM (FM24V05-GTR) 
+  - Used to store data  
+  - 2.0V - 3.6V
+  - 175 uA active current
+  - I2C
+  - https://www.infineon.com/dgdl/Infineon-FM24V05_512-Kbit_(64_K_8)_Serial_(I2C)_F-RAM-DataSheet-v09_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ec9b8d34206
+
+
+===============
+= POWER TREE  =
+===============
+
+Coin cell battery (3v) -> Buck Regulator (3.3V) -> CPU & Peripherals
+USB (5V) -> Low Dropout Regulator (3.3V) -> CPU & Peripherals
+
+- Buck Regulator
+- RP402N331E-TR-FE
+- https://www.mouser.com/ProductDetail/Nisshinbo/RP402N331E-TR-FE?qs=cl3%2FHQrKIOXaCCzNJ7It8A%3D%3D
+- https://www.mouser.com/datasheet/2/792/rp402-e-844338.pdf
+
+
