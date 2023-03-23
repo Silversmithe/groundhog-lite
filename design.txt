@@ -30,12 +30,12 @@ Goal of the device is:
   - Interfaces
   - Notes
 
-* - STM32L431RCT6
+* - STM32L431RCT6--, STM32L412RBT6+, STM32L452VET6+, STM32L433VCT6+
   - Low power 32-bit ARM CPU. Used to collect and store sensor information.
   - 1.8V - 3.3V Range 
   - TODO
   - I2C, USB, DAC, SWD
-  - Need to confirm if this is the correct CPU to use. Confirm how many inputs can go into DAC.
+  - Need to confirm if this is the correct CPU to use. Confirm how many inputs can go into DAC. 
 
 * - Photoresistor (e.g. SEN-09088)
   - Resistor that is sensitive to light. Use for sensor information.
