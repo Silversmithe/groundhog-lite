@@ -326,6 +326,18 @@
     [
       "f2c5757f-e0e3-42ec-a3b9-27ce976e3a0f",
       ""
+    ],
+    [
+      "052eed5e-f300-40ba-8abe-84a1e04f3c8e",
+      "power_signal"
+    ],
+    [
+      "4ae58507-ad12-4333-aba2-89db72063e7d",
+      "microcontroller"
+    ],
+    [
+      "179e2f5f-3544-4105-a6b4-8c48ece03661",
+      "sensors"
     ]
   ],
   "text_variables": {}
