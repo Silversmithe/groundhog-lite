@@ -56,14 +56,14 @@
     )
   )
 
-  (sheet (at 20.32 63.5) (size 54.61 12.7) (fields_autoplaced)
+  (sheet (at 21.59 63.5) (size 54.61 12.7) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid 4ae58507-ad12-4333-aba2-89db72063e7d)
-    (property "Sheetname" "microcontroller" (at 20.32 61.9234 0)
+    (property "Sheetname" "microcontroller" (at 21.59 61.9234 0)
       (effects (font (size 3 3)) (justify left bottom))
     )
-    (property "Sheetfile" "mcu.kicad_sch" (at 20.32 76.7846 0)
+    (property "Sheetfile" "mcu.kicad_sch" (at 21.59 76.7846 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
